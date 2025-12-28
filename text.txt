@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Flower Garden</title>
+
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: black;
+  touch-action: none;
+}
+canvas {
+  display: block;
+}
+#nameBox {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+}
+input {
+  font-size: 24px;
+  padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="nameBox">
+  <input id="nameInput" placeholder="Enter your name">
+</div>
+
+<canvas id="gl"></canvas>
+
+<script>
+const canvas = document.getElementById("gl");
+const gl = canvas.getContext("webgl");
+
+function resize(){
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  gl.viewport(0,0,canvas.width,canvas.height);
+}
+window.onresize = resize;
+resize();
+</script>
+
+</body>
+</html>
